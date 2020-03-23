@@ -5,7 +5,6 @@
 # -------------------------------
 user=$(whoami)
 fmt_hosts=( evt-fmt1-usw2.bintray.com evt-fmt2-euc1.bintray.com evt-fmt2-usw2.bintray.com evt-fmt3-euc1.bintray.com )
-#fmt_hosts=( evt-fmt1-usw2.bintray.com )
 alert_hosts=( evt-proc2-dal evt-proc3-dal evt-proc4-dal evt-proc5-dal evt-proc6-dal )
 alert_host_count=${#alert_hosts[@]}
 
@@ -38,7 +37,7 @@ pause(){
 }
 
 one(){
-	read -p "Enter the full hostname having alerts: " alert_host
+  read -p "Enter the full hostname having alerts: " alert_host
   check_host $alert_host
   for host in ${fmt_hosts[@]}
   do
@@ -103,7 +102,6 @@ function ctrl_c() {
 # ------------------------------------
 while true
 do
-
 	show_menus
 	read_options
 done
